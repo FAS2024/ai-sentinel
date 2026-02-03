@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <style>
+    .box { fill: #ffffff; stroke: #2d3e50; stroke-width: 2; rx: 8; ry: 8; }
+    .title { font: 700 18px Arial, sans-serif; fill: #111827; }
+    .label { font: 14px Arial, sans-serif; fill: #1f2937; }
+    .arrow { stroke: #2d3e50; stroke-width: 2; marker-end: url(#arrowhead); }
+    .caption { font: 13px Arial, sans-serif; fill: #4b5563; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d3e50" />
+    </marker>
+  </defs>
+
+  <text x="40" y="40" class="title">AI Sentinel – MVP Architecture</text>
+
+  <rect x="60" y="110" width="250" height="90" class="box"/>
+  <text x="90" y="150" class="label">Enterprise App</text>
+  <text x="90" y="172" class="caption">(AI workflow)</text>
+
+  <rect x="430" y="90" width="320" height="130" class="box"/>
+  <text x="460" y="130" class="label">AI Sentinel API (FastAPI)</text>
+  <text x="460" y="155" class="caption">/v1/monitor, /v1/logs, /v1/reports</text>
+
+  <rect x="840" y="70" width="300" height="110" class="box"/>
+  <text x="870" y="110" class="label">Detector Service</text>
+  <text x="870" y="135" class="caption">Rules → Risk + Labels</text>
+
+  <rect x="840" y="220" width="300" height="110" class="box"/>
+  <text x="870" y="260" class="label">Alerts Queue (Redis)</text>
+  <text x="870" y="285" class="caption">High risk → alert payload</text>
+
+  <rect x="430" y="280" width="320" height="140" class="box"/>
+  <text x="460" y="320" class="label">Audit Logs (PostgreSQL)</text>
+  <text x="460" y="345" class="caption">Inputs, outputs, risk, labels</text>
+
+  <line x1="310" y1="155" x2="430" y2="155" class="arrow"/>
+  <line x1="750" y1="155" x2="840" y2="125" class="arrow"/>
+  <line x1="750" y1="190" x2="840" y2="255" class="arrow"/>
+  <line x1="590" y1="220" x2="590" y2="280" class="arrow"/>
+
+  <text x="500" y="210" class="caption">Logs + metrics</text>
+  <text x="770" y="170" class="caption">Risk scoring</text>
+  <text x="770" y="240" class="caption">Alerts</text>
+</svg>
