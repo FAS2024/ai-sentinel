@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime
 
 from sqlalchemy import func
 from sqlalchemy.orm import Session
@@ -55,6 +55,6 @@ def build_summary_report(db: Session, request_id: str = "unknown") -> ReportSumm
         total_interactions=total or 0,
         avg_risk_score=float(avg_score or 0.0),
         high_risk_count=high_risk,
-        last_updated=datetime.utcnow(),
+        last_updated=datetime.now(UTC),
         request_id=request_id,
     )

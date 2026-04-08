@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, Request
 from sqlalchemy.orm import Session
 
-from backend.fastapi_app.db.session import get_db
 from backend.fastapi_app.db.models import InteractionLog
+from backend.fastapi_app.db.session import get_db
 from backend.fastapi_app.schemas import LogEntry, LogsResponse, MonitorRequest, MonitorResponse
 from backend.fastapi_app.services.alerts import send_alert_if_needed
 from backend.fastapi_app.services.detector import evaluate_risk

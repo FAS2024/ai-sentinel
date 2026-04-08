@@ -3,14 +3,18 @@
 **Goal:** show AI Sentinel catching unsafe outputs and logging governance metrics in under 60 seconds.
 
 ## 0) Pre‑reqs (first time only)
+
+**Option A — full stack in Docker:** from the repo root, `docker compose up -d --build`, then skip step 1 below (API is already on port 9000).
+
+**Option B — API on the host:** start only data services, then run uvicorn locally:
 ```
-docker compose up -d
+docker compose up -d postgres redis
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r backend/requirements.txt
 ```
 
-## 1) Start the API (5 seconds)
+## 1) Start the API (skip if using Docker for the API)
 ```
 uvicorn backend.fastapi_app.main:app --reload --port 9000
 ```

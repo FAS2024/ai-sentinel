@@ -1,9 +1,4 @@
-import os
-
-os.environ.setdefault("DATABASE_URL", "sqlite+pysqlite:///:memory:")
-os.environ.setdefault("REDIS_URL", "redis://localhost:6379/0")
-
-from backend.fastapi_app.services.detector import evaluate_risk  # noqa: E402
+from backend.fastapi_app.services.detector import evaluate_risk
 
 
 def test_detector_flags_unsafe_keywords() -> None:

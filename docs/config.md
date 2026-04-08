@@ -7,6 +7,10 @@ AI Sentinel uses environment variables for configuration. The defaults are suita
 - `ENV` (default: `local`)
 - `LOG_LEVEL` (default: `INFO`)
 
+## Health endpoints
+- `GET /v1/health` — liveness (no database call).
+- `GET /v1/health/ready` — readiness; runs `SELECT 1` against the configured database. Returns `503` if the database is unreachable.
+
 ## Storage
 - `DATABASE_URL` (default: `postgresql+psycopg2://sentinel:sentinel@localhost:5433/ai_sentinel`)
 - `REDIS_URL` (default: `redis://localhost:6379/0`)
